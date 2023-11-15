@@ -1,9 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Base.Theme.FastTask" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorSecondary">@color/gray_white</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
     </style>
 
-    <style name="Theme.FastTask" parent="Base.Theme.FastTask" />
+    <style name="Theme.FastTask" parent="Base.Theme.FastTask">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorOnSecondary">@color/gray</item>
+        <item name="colorAccent">@color/blue</item>
+
+        <item name="popupMenuBackground">@drawable/menu_background</item>
+        <item name="android:itemTextAppearance">@style/BasicText</item>
+    </style>
 </resources>

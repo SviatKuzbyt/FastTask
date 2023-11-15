@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MainMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/container_background</item>
+        <item name="android:textAppearanceListItem">@style/BoldBlueText</item>
+    </style>
+</resources>
