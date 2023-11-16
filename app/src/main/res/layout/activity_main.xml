@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <EditText
+    <com.sviatkuzbyt.fasttask.ui.elements.CreateTaskEditText
         android:id="@+id/createTask"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -25,7 +25,6 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/container_background"
         android:hint="@string/enter_task"
-        android:inputType="textMultiLine"
         android:maxHeight="192dp"
         android:minHeight="48dp"
         android:paddingVertical="8sp"

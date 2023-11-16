@@ -4,4 +4,6 @@
     <string name="menu">Меню</string>
     <string name="dones">Виконані завдання</string>
     <string name="info">Інформація</string>
+    <string name="no_task">Немає завдань</string>
+    <string name="no_task_description">Щоб створити завдання, натисніть на поле нижче</string>
 </resources>

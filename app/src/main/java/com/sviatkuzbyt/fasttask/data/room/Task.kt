@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Task(
-    @PrimaryKey(autoGenerate = true) val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Long,
     var text: String,
     var position: Int,
     var isDone: Boolean = false

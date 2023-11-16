@@ -10,9 +10,13 @@ class MainRepository(context: Context) {
 
     fun loadTask() = dao.getUnDoneTasks()
 
-
-    fun addTask(text: String){
-        val task = Task(0, text, 1)
-        dao.addTask(task)
+    fun addTaskAndReturnListTask(text: String, position: Int = 1): UnDoneTask{
+        val id = dao.addTask(Task(0, text, position))
+        return UnDoneTask(id, text, position)
     }
+
+    fun deleteTask(id: Long){
+        dao.delete(id)
+    }
+
 }
