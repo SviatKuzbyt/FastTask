@@ -18,10 +18,10 @@ interface TaskDao {
     fun addTask(task: Task): Long
 
     @Query("UPDATE Task SET text=:text WHERE id=:id")
-    fun updateTask(id: Int, text: String)
+    fun updateTask(id: Long, text: String)
 
     @Query("UPDATE Task SET isDone=:isDone WHERE id=:id")
-    fun updateDone(id: Int, isDone: Boolean)
+    fun updateDone(id: Long, isDone: Boolean)
 
     @Query("DELETE FROM Task WHERE id=:id")
     fun delete(id: Long)

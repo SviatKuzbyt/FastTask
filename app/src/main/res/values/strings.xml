@@ -6,4 +6,8 @@
     <string name="info">Інформація</string>
     <string name="no_task">Немає завдань</string>
     <string name="no_task_description">Щоб створити завдання, натисніть на поле нижче</string>
+    <string name="edit">Редагувати</string>
+    <string name="delete">Видалити</string>
+    <string name="save">Зберегти</string>
+    <string name="no_data">Не вдалося отримати дані</string>
 </resources>

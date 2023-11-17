@@ -19,4 +19,12 @@ class MainRepository(context: Context) {
         dao.delete(id)
     }
 
+    fun makeDoneTask(id: Long){
+        dao.updateDone(id, true)
+    }
+
+    fun updateTask(id: Long, text: String){
+        dao.updateTask(id, text)
+    }
+
 }

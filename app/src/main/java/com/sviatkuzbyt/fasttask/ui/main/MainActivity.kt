@@ -3,7 +3,6 @@ package com.sviatkuzbyt.fasttask.ui.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,16 +24,25 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         recyclerTasks.layoutManager = LinearLayoutManager(this)
-        recyclerAdapter = TaskAdapter(viewModel)
-        recyclerTasks.adapter = recyclerAdapter
 
         viewModel.list.observe(this){
             when(viewModel.getListState()){
-                ListChanges.LoadAll -> recyclerAdapter.addAll(it)
+                ListChanges.LoadAll -> {
+                    recyclerAdapter = TaskAdapter(it, viewModel, this)
+                    recyclerTasks.adapter = recyclerAdapter
+                }
 
                 ListChanges.AddTask ->{
                     recyclerAdapter.addElement()
                     recyclerTasks.scrollToPosition(0)
+                }
+
+                ListChanges.Delete ->{
+                    recyclerAdapter.removeElement(viewModel.getChangePosition())
+                }
+
+                ListChanges.Edit ->{
+                    recyclerAdapter.notifyItemChanged(viewModel.getChangePosition())
                 }
                 else -> {}
             }
@@ -48,6 +56,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
